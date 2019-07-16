@@ -1,0 +1,13 @@
+include ../components/_head
+include ../components/_header
+include ../components/_footer
+include ../components/_box
+
+block var
+doctype html
+html(lang="ja")
+  +head(Items)
+  body
+    +header
+    block content
+    +footer(Items.scripts)

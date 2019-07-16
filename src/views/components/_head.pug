@@ -1,0 +1,10 @@
+mixin head(items)
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    meta(name="Keywords" content=items.keywords)
+    meta(name="description" content=items.description)
+    title #{items.title}
+    each style in items.styles
+      link(rel="stylesheet", href=style)

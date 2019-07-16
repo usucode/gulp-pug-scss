@@ -1,0 +1,16 @@
+extends ./layouts/_main
+
+block var
+  -
+    Items = {
+      title: "Sample title",
+      keywords: "XXXX,YYYY,ZZZZ",
+      description: "Sampleページです。",
+      styles: ["css/common.css","css/style.css"],
+      scripts: ["js/common.js"]
+    }
+
+block content
+  #content
+    h1.blue Hello from Pug
+    +box
