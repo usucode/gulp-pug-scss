@@ -12,7 +12,8 @@
 
 ```bash
 # clone
-git clone git@github.com:usu-blog/gulp-pug-scss.git pug-scss && cd pug-scss
+mkdir pug-scss && cd $_
+git clone git@github.com:usu-blog/gulp-pug-scss.git .
 
 # yarn
 yarn
