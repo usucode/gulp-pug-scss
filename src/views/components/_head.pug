@@ -6,5 +6,6 @@ mixin head(items)
     meta(name="Keywords" content=items.keywords)
     meta(name="description" content=items.description)
     title #{items.title}
-    each style in items.styles
-      link(rel="stylesheet", href=style)
+    if items.styles
+      each style in items.styles
+        link(rel="stylesheet", href=style)
