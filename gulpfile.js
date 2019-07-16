@@ -43,9 +43,7 @@ function styles() {
     )
     .pipe(sourcemaps.write({ includeContent: false }))
     .pipe(sourcemaps.init({ loadMaps: true }))
-    .pipe(
-      autoprefixer(["last 3 versions", "ie >= 8", "Android >= 4", "iOS >= 8"])
-    )
+    .pipe(autoprefixer(["last 2 versions", "ie >= 11", "Android >= 4"])) // IEは11以上、Androidは4以上残りは、2version
     .pipe(sourcemaps.write())
     .pipe(gulp.dest("./dist/css/"))
     .pipe(browserSync.stream())
