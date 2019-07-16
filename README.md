@@ -10,6 +10,7 @@
 ## How to use
 
 ```bash
+# clone
 git clone git@github.com:usu-blog/gulp-pug-scss.git pug-scss && cd pug-scss
 
 # yarn
