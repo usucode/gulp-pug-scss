@@ -11,15 +11,17 @@
 クローンしたあと
 
 ```bash
+# yarn
 yarn
 yarn start
-
-# Build
-
 yarn build
+yarn clean #Windowsの場合は削除コマンド変更
 
-# Remove dist directory(Windowsはpackage.jsonのディレクトリ削除コマンドを変更)
-yarn clean
+# npm(yarnがない人)
+npm install
+npm run start
+npm run build
+npm run clean #Windowsの場合は削除コマンド変更
 ```
 
 ## Pug のコンポーネント追加
