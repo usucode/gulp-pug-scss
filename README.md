@@ -5,6 +5,7 @@
 - gulp
 - pug
 - scss
+- babel
 
 ## How to use
 
