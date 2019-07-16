@@ -1,12 +1,14 @@
 const gulp = require("gulp")
 const babel = require("gulp-babel")
 const sass = require("gulp-sass")
+const sourcemaps = require("gulp-sourcemaps")
+const autoprefixer = require("gulp-autoprefixer")
 const pug = require("gulp-pug")
 const plumber = require("gulp-plumber") // エラー時の強制終了を防止
 const notify = require("gulp-notify") // エラー発生時にデスクトップ通知する
 const browserSync = require("browser-sync").create()
 
-var paths = {
+const paths = {
   styles: "./src/scss/**/*.scss",
   _styles: "!./src/scss/**/_*.scss",
   views: "./src/views/**/*.pug",
@@ -32,12 +34,19 @@ function styles() {
         }),
       })
     )
+    .pipe(sourcemaps.init())
     .pipe(
       sass({
         outputStyle: "compressed",
         // outputStyle: 'expanded'
       })
     )
+    .pipe(sourcemaps.write({ includeContent: false }))
+    .pipe(sourcemaps.init({ loadMaps: true }))
+    .pipe(
+      autoprefixer(["last 3 versions", "ie >= 8", "Android >= 4", "iOS >= 8"])
+    )
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest("./dist/css/"))
     .pipe(browserSync.stream())
 }
