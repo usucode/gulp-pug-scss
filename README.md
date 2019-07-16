@@ -1,4 +1,5 @@
 # gulp-pug-stylus の構築
+![pug](src/assets/images/pug.png)
 
 ## 技術
 
