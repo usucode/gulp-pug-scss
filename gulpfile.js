@@ -1,4 +1,5 @@
 const gulp = require("gulp")
+const babel = require("gulp-babel")
 const sass = require("gulp-sass")
 const pug = require("gulp-pug")
 const plumber = require("gulp-plumber") // エラー時の強制終了を防止
@@ -66,6 +67,11 @@ function views() {
 function js() {
   return gulp
     .src([paths.js])
+    .pipe(
+      babel({
+        presets: ["@babel/env"],
+      })
+    )
     .pipe(gulp.dest("./dist/js/"))
     .pipe(browserSync.stream())
 }
