@@ -9,9 +9,9 @@
 
 ## How to use
 
-クローンしたあと
-
 ```bash
+git clone git@github.com:usu-blog/gulp-pug-scss.git pug-scss && cd pug-scss
+
 # yarn
 yarn
 yarn start
